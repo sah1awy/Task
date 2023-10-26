@@ -1,0 +1,52 @@
+import pandas
+import random
+
+filename = "data.txt"
+n = sum(1 for line in open(filename)) - 1 #number of records in file (excludes header)
+s = 10000 #desired sample size
+skip = sorted(random.sample(range(1,n+1),n-s)) #the 0-indexed header will not be included in the skip list
+df = pandas.read_csv(filename, skiprows=skip)
+
+
+#####
+# we can use dask or vaexio
+
+#####
+#difference between systematic and judgement sample
+# Judgement sampling, focuses on choosing individuals who have traits related to the research project
+# Systematic sampling, shouldn't necessarily have sample related to the research
+# qouta sampling, researchers create a convenience sample involving individuals that represent a population. Researchers choose these individuals according to specific traits or qualities. They decide and create quotas so that the market research samples can be useful in collecting data
+#####
+df = pd.read_csv("data.csv")
+df.sort_values("name")
+df.sort_index()
+######
+a = {"A":[10,20,30],"B"[73,37,78]}
+b = {"A":[40,50,60],"B":[73,63,53]}
+c = {"A":[70,80,90],"B":[76,63,42]}
+df1 = pd.DataFrame(a)
+df2 = pd.DataFrame(b)
+df3 = pd.DataFrame(c)
+pd.merge(df1,df2,on= "A",how="inner").merge(df3,on= "A",how="inner")
+
+#####
+# 1)selenium    2)appium.  3)katalon   4)cucumber.   5)worksoft
+# selenium is the most popular 
+
+######
+#Data warehouses are typically used by organizations to store large amounts of data from various sources, such as transactional data, log data, and other types of data.
+#Database is a collection of data that is organized in a specific way to facilitate easy access, retrieval, and manipulation
+#Data leak is an unauthorized disclosure of sensitive or confidential information. This can occur due to a variety of reasons, such as a security breach, human error, or a malicious attack
+
+#####
+#Relational databases are based on a table-based data model, where data is stored in tables with well-defined relationships between them. This allows for efficient querying and manipulation of data using SQL
+#Non Relational database are designed to handle unstructured or semi-structured data, such as social media posts, user preferences, and IoT sensor readings. They are horizontally scalable, meaning they can handle large amounts of data and high levels of concurrency without breaking down
+
+#####
+#Vector databases store data by using vector embeddings. Vector embeddings in vector databases refer to a way of representing objects, such as items, documents, or data points, as vectors in a multi-dimensional space. Each object is assigned a vector that captures various characteristics or features of that object
+
+#######
+#Hot encoding is a technique used to convert categorical variables into numerical variables
+#Ordinal encoding is similar to hot encoding, but it preserves the order of the categories. It assigns a unique number to each category
+#Label encoding is a technique used to convert categorical variables into numerical variables, but it does not preserve the order of the categories
+
